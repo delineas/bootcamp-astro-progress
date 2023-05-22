@@ -21,7 +21,14 @@ const { title, imageUrl, buttonText, buttonLink } = Astro.props;
   </div>
   <div class="col-lg-6">
     <h1 class="display-5 fw-bold lh-1 mb-3">{title}</h1>
-    <slot />
+    <slot>
+      <p class="lead">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </p>
+    </slot>
     {
       buttonText && (
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
