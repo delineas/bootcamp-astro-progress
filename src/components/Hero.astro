@@ -1,9 +1,9 @@
 ---
 interface Props {
-  title: string,
-  imageUrl: string,
-  buttonText: string,
-  buttonLink: string
+  title: string;
+  imageUrl: string;
+  buttonText?: string;
+  buttonLink?: string;
 }
 const { title, imageUrl, buttonText, buttonLink } = Astro.props;
 ---
@@ -22,10 +22,14 @@ const { title, imageUrl, buttonText, buttonLink } = Astro.props;
   <div class="col-lg-6">
     <h1 class="display-5 fw-bold lh-1 mb-3">{title}</h1>
     <slot />
-    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-      <a href={buttonLink} class="btn btn-primary btn-lg px-4 me-md-2"
-        >{buttonText}</a
-      >
-    </div>
+    {
+      buttonText && (
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <a href={buttonLink} class="btn btn-primary btn-lg px-4 me-md-2">
+            {buttonText}
+          </a>
+        </div>
+      )
+    }
   </div>
 </div>
