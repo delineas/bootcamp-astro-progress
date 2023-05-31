@@ -10,7 +10,7 @@ const projects = await response.json();
   <h2>Mis proyectos en Github</h2>
   <div class="list-group">
     {
-      projects.slice(0,5).map((project: any) => {
+      projects.slice(0,5).map((project) => {
         return (
           <a
             href={project.html_url}
